@@ -1,10 +1,12 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+#
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# eval "$(starship init zsh)"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
@@ -88,28 +90,13 @@ alias ls='ls --color'
 alias la='ls -a'
 alias ll='ls -a -l'
 
-alias dmenu='wofi -d'
-
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-source ~/.local/src/fzf-git.sh/fzf-git.sh
+# source ~/.local/src/fzf-git.sh/fzf-git.sh
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/statusbar:$HOME/minecraft:$HOME/.local/bin:$HOME/playgrounds/c/bin/"
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/statusbar:$HOME/minecraft:$HOME/.local/bin:$HOME/playgrounds/c/bin/"
 export EDITOR="/usr/bin/nvim"
 export VISUL="/usr/bin/vlc"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/hari/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hari/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/hari/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/hari/google-cloud-sdk/completion.zsh.inc'; fi
-
-# pnpm
-export PNPM_HOME="/home/hari/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
