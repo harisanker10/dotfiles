@@ -1,16 +1,17 @@
 lastupdatecheck: 1708749294
 recentrepos:
-    - /home/hari/code/project2/servel
-    - /home/hari/playgrounds/alpha_tribe-assignment
+    - /home/hari/dotfiles
+    - /home/hari/playgrounds/portfolio
+    - /home/hari/code/servel
+    - /home/hari/clones/blink.cmp
     - /home/hari/.config/nvim
+    - /home/hari/playgrounds/alpha_tribe-assignment
     - /home/hari/code/TweetBot
     - /home/hari/playgrounds/sort-algorithms-visualization
-    - /home/hari/.local/src/dwm-hari/dwm
     - /home/hari/code/netflix-react/netflix-react
-    - /home/hari/clones/TodoApp
     - /home/hari/code/Data-Structures
 startuppopupversion: 5
-lastversion: 0.44.1
+lastversion: 0.45.2
 customcommandshistory:
     - h
     - origin

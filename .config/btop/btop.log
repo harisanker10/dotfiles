@@ -1,0 +1,31 @@
+
+2024/11/19 (12:33:35) | ===> btop++ v.1.4.0
+2024/11/19 (12:33:36) | ERROR: Stall in Runner thread, restarting!
+2024/11/19 (12:34:20) | ERROR: Stall in Runner thread, restarting!
+2024/11/19 (12:34:34) | ERROR: Stall in Runner thread, restarting!
+2024/11/19 (12:34:50) | ERROR: Stall in Runner thread, restarting!
+2024/11/19 (12:36:20) | ERROR: Stall in Runner thread, restarting!
+
+2025/01/04 (14:15:26) | ===> btop++ v.1.4.0
+2025/01/04 (14:15:26) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:27:03) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:29:04) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:29:46) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:30:15) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:30:25) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:30:40) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:30:54) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:31:09) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:35:12) | ERROR: Stall in Runner thread, restarting!
+2025/01/04 (14:35:41) | ERROR: Stall in Runner thread, restarting!
+
+2025/01/12 (11:07:45) | ===> btop++ v.1.4.0
+2025/01/12 (11:07:45) | ERROR: Stall in Runner thread, restarting!
+2025/01/12 (11:07:57) | ERROR: Stall in Runner thread, restarting!
+2025/01/12 (11:08:11) | ERROR: Stall in Runner thread, restarting!
+2025/01/12 (16:20:56) | ERROR: Stall in Runner thread, restarting!
+
+2025/01/23 (13:58:24) | ===> btop++ v.1.4.0
+2025/01/23 (13:58:24) | ERROR: Stall in Runner thread, restarting!
+2025/01/23 (13:58:42) | ERROR: Stall in Runner thread, restarting!
+2025/01/25 (17:58:51) | WARNING: Failed to join _runner thread on exit!

@@ -1,3 +1,4 @@
+source ~/.env
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -19,6 +20,7 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 bindkey -v
+bindkey '^P' up-line-or-history
 
 
 # Add in Powerlevel10k
@@ -27,18 +29,19 @@ zinit light zsh-users/zsh-syntax-highlighting
 # zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
+bindkey '^e' autosuggest-accept
 
 zi snippet OMZP::jsontools
 
 
 zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-ZVM_VI_HIGHLIGHT_BACKGROUND=blue
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+# zinit light jeffreytse/zsh-vi-mode
+# ZVM_VI_HIGHLIGHT_BACKGROUND=blue
+# ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
 # -----------------------------------------------------
 # zinit light Aloxaf/fzf-tab
-# zinit light softmoth/zsh-vim-mode
+zinit light softmoth/zsh-vim-mode
 
 # Disable all tracking of editing keymap, cursor styling, prompt indicators,
 # etc.
@@ -86,17 +89,34 @@ alias vim='nvim'
 alias c='clear'
 alias j='z'
 alias k='kubectl'
-alias ls='ls --color'
-alias la='ls -a'
-alias ll='ls -a -l'
+alias ls='command -v exa >/dev/null 2>&1 && exa --icons'
+alias la='command -v exa >/dev/null 2>&1 && exa --tree --level=1 --all --icons --long --modified'
+# alias ll='ls -l'
+alias ll='command -v exa >/dev/null 2>&1 && exa --tree --level=1 --icons --long'
+
+alias notes='tjournal'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-# source ~/.local/src/fzf-git.sh/fzf-git.sh
+source ~/.config/fzf/fzf-git.sh
 
 # export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/statusbar:$HOME/minecraft:$HOME/.local/bin:$HOME/playgrounds/c/bin/"
 export EDITOR="/usr/bin/nvim"
 export VISUL="/usr/bin/vlc"
+export MANPAGER='nvim +Man!'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/home/hari/.bun/_bun" ] && source "/home/hari/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:~/.local/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/hari/google/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hari/google/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/hari/google/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/hari/google/google-cloud-sdk/completion.zsh.inc'; fi
