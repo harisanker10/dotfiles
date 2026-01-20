@@ -1,25 +1,14 @@
 lastupdatecheck: 1708749294
 recentrepos:
-    - /home/hari/dotfiles
-    - /home/hari/playgrounds/portfolio
-    - /home/hari/code/servel
-    - /home/hari/clones/blink.cmp
+    - /home/hari/code/work/app.whitefieldfc
     - /home/hari/.config/nvim
-    - /home/hari/playgrounds/alpha_tribe-assignment
-    - /home/hari/code/TweetBot
-    - /home/hari/playgrounds/sort-algorithms-visualization
-    - /home/hari/code/netflix-react/netflix-react
-    - /home/hari/code/Data-Structures
+    - /home/hari/code/work/academy-app
+    - /home/hari/dotfiles
+    - /home/hari/code/servel
 startuppopupversion: 5
-lastversion: 0.45.2
+didshowhunkstaginghint: true
+lastversion: 0.58.0
 customcommandshistory:
     - h
     - origin
 hidecommandlog: false
-ignorewhitespaceindiffview: false
-diffcontextsize: 3
-renamesimilaritythreshold: 50
-localbranchsortorder: recency
-remotebranchsortorder: alphabetical
-gitlogorder: topo-order
-gitlogshowgraph: always

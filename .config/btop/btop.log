@@ -29,3 +29,12 @@
 2025/01/23 (13:58:24) | ERROR: Stall in Runner thread, restarting!
 2025/01/23 (13:58:42) | ERROR: Stall in Runner thread, restarting!
 2025/01/25 (17:58:51) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/16 (21:49:46) | ===> btop++ v.1.4.0
+2025/02/16 (21:49:46) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (00:55:55) | ===> btop++ v.1.4.0
+2025/02/27 (00:55:55) | ERROR: Stall in Runner thread, restarting!
+
+2025/03/03 (17:52:00) | ===> btop++ v.1.4.0
+2025/03/03 (17:52:00) | WARNING: Failed to join _runner thread on exit!

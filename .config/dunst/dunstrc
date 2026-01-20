@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = (400,500)
 
     # The maximum height of a single notification, excluding the frame.
     height = 300
@@ -95,7 +95,9 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#ffffff"
+    # frame_color = "#ffffff"
+    frame_color = "#565f89"
+
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -109,7 +111,8 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = auto
+    # separator_color = auto
+    separator_color = frame
 
     # Sort messages by urgency.
     sort = yes
@@ -123,7 +126,7 @@
 
     ### Text ###
 
-    font = Monospace 10
+    font = JetBrainsMono Nerd Font 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -314,8 +317,8 @@
 # [urgency_low]
 #     # IMPORTANT: colors have to be defined in quotation marks.
 #     # Otherwise the "#" and following would be interpreted as a comment.
-#     background = "#bfbfc5"
-#     foreground = "#888888"
+    # background = "#bfbfc5"
+    # foreground = "#888888"
 #     timeout = 10
 #     # Icon for notifications with low urgency, uncomment to enable
 #     #default_icon = /path/to/icon
@@ -338,26 +341,22 @@
 
 
 [urgency_low]
-    background = "#0b0b17"   # Mocha background
-    foreground = "#bac2de"   # Regular7 (light grey-blue)
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#565f89"
     timeout = 10
-    # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#45475a"   # Regular0 (dark grey-blue)
-    foreground = "#cdd6f4"   # Mocha foreground
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#7aa2f7"
     timeout = 10
-    # Icon for notifications with normal urgency, uncomment to enable
-    #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#f38ba8"   # Regular1 (pink)
-    foreground = "#ffffff"   # White for better visibility on pink
-    frame_color = "#f38ba8"  # Regular1 (matching the background)
+    background = "#1a1b26"
+    foreground = "#f7768e"
+    frame_color = "#f7768e"
     timeout = 0
-    # Icon for notifications with critical urgency, uncomment to enable
-    #default_icon = /path/to/icon
 
 
 

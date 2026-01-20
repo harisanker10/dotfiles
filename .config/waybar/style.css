@@ -1,172 +1,207 @@
+@import "machiatto.css";
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
 * {
-  border: none;
-  min-height: 0;
-  font-family: JetBrainsMono Nerd Font;
+  color: @lavender;
+  border: 0;
+  padding: 0 0;
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 12px;
-}
-
-.modules-right {
-  background-color: #1e1e2e;
-  /* background-color: var(--background-color); */
-  margin: 2px 10px 0 0;
-  margin-right: 20px;
-  border-radius: 12px;
-}
-
-.modules-center {
-  /* background-color: #1e1e2e; */
-  background-color: transparent;
-  margin: 2px 10px 0 0;
-  border-radius: 12px;
-}
-
-.modules-left {
-  background-color: transparent;
-  margin: 2px 50px 0 0;
-  margin-left: 30px;
-  border-radius: 12px;
+  font-weight: 900;
+  transition: all 0.1s ease;
 }
 
 window#waybar {
-  /* background-color: #1e1e2e; */
-  /* transition-property: background-color; */
-  /* transition-duration: 0.5s; */
+  /* background-color: @crust; */
   background-color: transparent;
 }
 
-window#waybar.hidden {
-  opacity: 0;
+#workspaces button label {
+  color: @blue;
 }
-mpris#waybar.hidden {
-  opacity: 0;
-}
-
-#workspaces {
-  background-color: transparent;
-}
-
-#window {
-  background-color: #1e1e2e;
-  font-size: 12px;
-  color: #cdd6f4;
-  padding: 0px 15px;
-  font-weight: 900;
-  margin: 2px 10px 0 0;
-  border-radius: 12px;
+#workspaces button.active label {
+  color: @base;
 }
 
 #workspaces button {
-  all: initial;
-  /* Remove GTK theme values (waybar #1351) */
-  min-width: 0;
-  /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: inset 0 -3px transparent;
-  /* Use box-shadow instead of border so the text isn't offset */
-  padding: 2px 10px;
-  margin: 6px 3px;
-  border-radius: 4px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-#workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  /* border-radius: 50%; */
+  background-color: @crust;
+  color: #000000;
+  margin: 0px 1px;
+  padding: 0px 6px;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  box-shadow: none;
+  text-shadow: none;
+  border: 0px;
+  background: @lavendar;
 }
 
-#custom-separator {
-  color: #1b5e20;
-  margin: 0 5px;
+#workspaces {
+  border-style: solid;
+  border-radius: 100px;
+  margin: 6px 0px;
+  margin-left: 20px;
 }
 
-#workspaces button.urgent {
-  background-color: #f38ba8;
+#workspaces button.active {
+  background-color: @blue;
 }
 
-#memory,
-#custom-todos,
-#battery,
-#backlight,
-#pulseaudio,
-#network,
 #clock,
+#custom-swap,
+#custom-background,
+#custom-cava-internal,
+#battery,
 #cpu,
+#memory,
 #disk,
-#tray {
-  min-height: 10px;
-  border-radius: 4px;
-  margin: 4px 3px;
-  padding: 1px 12px;
-  font-weight: 700;
-  /* background-color: #1e1e2e; */
-  /* color: #181825; */
+#idle_inhibitor,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#bluetooth,
+#tray,
+#custom-power,
+#mpris,
+#window,
+#custom-pacman {
+  padding: 5px 8px;
+  border-style: solid;
+  background-color: @crust;
+  opacity: 1;
+  margin: 6px 0px 6px 0px;
 }
 
-#cava {
-  color: #f2cdcd;
-}
-
-#clock.calender {
-  color: #f2cdcd;
-}
-
-#custom-todos {
-  color: #f9e2af;
-}
+/* -----------------------------------------------------------------------------
+   * Module styles
+   * -------------------------------------------------------------------------- */
 
 #disk {
-  color: #94e2d5;
+  margin-left: 10px;
+  padding-left: 12px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#window {
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+#mode {
+  border-radius: 10px;
+  color: @mauve;
+  margin-right: 5px;
 }
 
 #mpris {
-  color: #fab387;
-  /* background-color: #2c313c; */
-  padding-right: 16px;
-  padding-left: 16px;
+  color: @yellow;
+  margin-right: 10px;
   border-radius: 10px;
-  font-weight: 900;
-
-  background-color: #1e1e2e;
   padding: 0px 15px;
-  font-weight: 900;
-  margin: 2px 10px 0 0;
-  border-radius: 12px;
 }
 
-#memory {
-  color: #fab387;
+#custom-cava {
+  color: #8fbc8f;
+  border-left: 0px;
+  border-right: 0px;
+  padding-bottom: 6px;
+  font-family: "bargraph";
+  font-size: 22px;
+}
+
+#custom-cava-internal {
+  border-radius: 10px;
+  color: @mauve;
+}
+
+#mpd {
+  border-radius: 10px;
+  color: @mauve;
+  margin-left: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#mpd.2 {
+  border-radius: 10px 0px 0px 10px;
+  margin: 8px 0px 8px 6px;
+  padding: 4px 12px 4px 10px;
+}
+
+#mpd.3 {
+  border-radius: 0px 0px 0px 0px;
+  margin: 8px 0px 8px 0px;
+  padding: 4px;
+}
+
+#mpd.4 {
+  border-radius: 0px 10px 10px 0px;
+  margin: 8px 0px 8px 0px;
+  padding: 4px 10px 4px 14px;
+}
+
+#mpd.2,
+#mpd.3,
+#mpd.4 {
+  background-color: @base;
+  font-size: 14px;
+}
+
+#custom-swap {
+  border-radius: 10px;
+  color: @base;
+  margin-left: 10px;
+  background-color: @mauve;
+}
+
+#custom-background {
+  border-radius: 10px;
+  background-color: @base;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 0px;
+}
+
+#clock {
+  /* background-color:#a3be8c; */
+  color: @sky;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+#backlight {
+  /* margin-left: 8px; */
+  padding-left: 12px;
+  color: @yellow;
+  /* border-bottom: 2px solid @yellow; */
+  border-radius: 10px 0 0 10px;
+  /* margin: 10px 10px; */
 }
 
 #battery {
-  color: #f9e2af;
-}
-
-#pulseaudio {
-  color: #f38ba8;
-}
-
-#cpu {
-  color: #f38ba8;
-}
-
-@keyframes blink {
-  to {
-    background-color: #f38ba8;
-    color: #181825;
-  }
+  color: @maroon;
+  /* border-bottom: 2px solid #d8dee9; */
+  margin-left: 20px;
+  padding-right: 10px;
+  padding-left: 5px;
+  border-radius: 10 10px 10px 10;
+  margin-right: 10px;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: #ff0048;
+  background-color: @red;
   color: #181825;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -176,60 +211,117 @@ mpris#waybar.hidden {
 }
 
 #battery.charging {
-  color: #a6e3a1;
-  background-color: #1e1e2e;
+  color: @green;
   animation: none;
+  background-color: @crust;
+  /* border-bottom: 2px solid #81a1c1; */
 }
 
-#backlight {
-  background-color: #1e1e2e;
-  color: #cba6f7;
-  padding-right: 17px;
+#cpu {
+  color: @sky;
+  /* border-bottom: 2px solid @sky; */
+}
+
+#cpu #cpu-icon {
+  color: @sky;
+}
+
+#memory {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
+  padding-right: 12px;
+  color: @sky;
+}
+
+#network.disabled {
+  color: #bf616a;
+  /* border-bottom: 2px solid #bf616a; */
 }
 
 #network {
-  color: #94e2d5;
-  padding-right: 17px;
+  color: @green;
+  /* border-bottom: 2px solid @green; */
+  border-radius: 10px 0px 0px 10px;
 }
 
-#clock {
-  font-family: JetBrainsMono Nerd Font;
-  color: #cba6f7;
+#bluetooth {
+  color: @blue;
+  /* border-bottom: 2px solid @green; */
+  border-radius: 0px 10px 10px 0px;
+}
+
+#network.disconnected {
+  color: #bf616a;
+  /* border-bottom: 2px solid #bf616a; */
+}
+
+#pulseaudio {
+  border-radius: 0px 10px 10px 0px;
+  color: @flamingo;
+  /* margin-right: 10px; */
+  /* padding-right: 12px; */
+  /* border-bottom: 2px solid @flamingo; */
+}
+
+#pulseaudio.muted {
+  color: #3b4252;
+  /* border-bottom: 2px solid #3b4252; */
+}
+
+#temperature {
+  color: @teal;
+  /* border-bottom: 2px solid @teal; */
+  border-radius: 10px 0 0 10px;
+}
+
+#temperature.critical {
+  color: @red;
+  /* border-bottom: 2px solid @red; */
+}
+
+#idle_inhibitor {
+  background-color: #ebcb8b;
+  color: @base;
+}
+
+#tray {
+  /* background-color: @base; */
+  margin: 8px 10px;
+  border-radius: 10px;
+}
+
+#custom-launcher,
+#custom-power {
+}
+
+#custom-launcher {
+  background-color: #fff;
+  color: @mauve;
+  border-radius: 0px 15px 0px 0px;
+  padding: 5px 10px 5px 10px;
 }
 
 #custom-power {
-  color: #f2cdcd;
+  color: @base;
+  background-color: @red;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 15px;
+  padding: 5px 10px;
 }
 
-tooltip {
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #131822;
+#window {
+  border-style: hidden;
+  margin-left: 10px;
+  /* margin-top:1px;  
+      padding: 8px 1rem; */
+  margin-right: 10px;
+  color: #eceff4;
 }
 
-tooltip label {
-  padding: 5px;
-  background-color: #131822;
-}
-
-#cpu,
-#disk,
-#memory {
-  background-color: #1e1e2e;
-  margin: 0px;
-  border-radius: 0px;
-}
-
-#disk {
-  border-radius: 12px 0px 0px 12px;
-  margin-left: 40px;
-}
-
-#memory {
-  border-radius: 0px 12px 12px 0px;
-}
-
-.modules-left > widget:first-child {
-  background-color: #131822;
-  border-radius: 8px;
+#custom-keyboard-layout {
+  color: @peach;
+  /* border-bottom: 2px solid @peach; */
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
 }

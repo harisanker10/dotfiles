@@ -1,4 +1,3 @@
-source ~/.env
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# eval "$(starship init zsh)"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
@@ -94,29 +92,41 @@ alias la='command -v exa >/dev/null 2>&1 && exa --tree --level=1 --all --icons -
 # alias ll='ls -l'
 alias ll='command -v exa >/dev/null 2>&1 && exa --tree --level=1 --icons --long'
 
+alias calc='rofi -show calc -modi calc -no-show-match -no-sort'
+
 alias notes='tjournal'
+
+alias nrun='notify-send "Done: $*" "$(if [ $? -eq 0 ]; then echo succeeded; else echo "failed ($?)"; fi)" &'
+
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-source ~/.config/fzf/fzf-git.sh
+# source ~/.config/fzf/fzf-git.sh
 
-# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/statusbar:$HOME/minecraft:$HOME/.local/bin:$HOME/playgrounds/c/bin/"
+export PATH=:$PATH
 export EDITOR="/usr/bin/nvim"
 export VISUL="/usr/bin/vlc"
 export MANPAGER='nvim +Man!'
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Adwaita-Dark
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin/statusbar:$HOME/minecraft:$HOME/.local/bin:$HOME/playgrounds/c/bin/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# bun completions
-[ -s "/home/hari/.bun/_bun" ] && source "/home/hari/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:~/.local/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/hari/google/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hari/google/google-cloud-sdk/path.zsh.inc'; fi
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/hari/google/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hari/google/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/hari/google/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/hari/google/google-cloud-sdk/completion.zsh.inc'; fi
+
+# fnm
+FNM_PATH="/home/hari/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
