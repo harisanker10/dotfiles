@@ -1,0 +1,1 @@
+/home/hari/.local/share/pipx/venvs/esptool/bin/esp_rfc2217_server.py

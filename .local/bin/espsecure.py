@@ -1,0 +1,1 @@
+/home/hari/.local/share/pipx/venvs/esptool/bin/espsecure.py
