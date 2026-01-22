@@ -1,0 +1,1 @@
+setsid flatpak run com.stremio.Stremio && exit

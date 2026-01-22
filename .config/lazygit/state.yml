@@ -1,13 +1,11 @@
 lastupdatecheck: 1708749294
 recentrepos:
+    - /home/hari/work/code/app.whitefieldfc
     - /home/hari/dotfiles
-    - /home/hari/code/work/app.whitefieldfc
     - /home/hari/.config/nvim
-    - /home/hari/code/work/academy-app
-    - /home/hari/code/servel
 startuppopupversion: 5
 didshowhunkstaginghint: true
-lastversion: 0.58.0
+lastversion: 0.58.1
 customcommandshistory:
     - h
     - origin
