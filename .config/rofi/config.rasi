@@ -1,98 +1,170 @@
 configuration {
-    modi:          "combi";
-    combi-modi:    "drun,run";          // Combines drun + run in one list
-    font:          "Rubik 10";
+    modi:          "combi,calc";
+    combi-modi:    "drun,run,calc";
+    font:          "JetBrainsMono";
     show-icons:    true;
-    icon-theme:    "Reversal-dark";
     display-drun:  "";
+    display-run:   "";                      // Add this line
+    display-calc:  "";                      // Add this line
     drun-display-format: "{name}";
+    run-display-format: "{name}";
     sidebar-mode:  false;
-
-  kb-remove-to-eol: "";
-  kb-accept-entry: "Control+m,Return,KP_Enter";
-  kb-row-up: "Up,Control+k";
-  kb-row-down: "Down,Control+j";
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
 }
 
-@theme "/dev/null"
-
 * {
-	bg:				#151515;
-	fg:				#e8e8d3;
-	accent:				#687363;
-	button:				#1c1c1c;
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #f9e2af;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+    width: 600;
+    font: "JetBrainsMono Nerd Font 14";
+}
 
-	background-color:		@bg;
-	text-color:			@fg;
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
 }
 
 window {
-	border-radius:                  7px;
-	width:			    	20%;
-	padding: 			32px;
-}
-
-prompt {
-	background-color:		@button;
-	enabled:			true;
-	padding:			0.5% 32px 0% -0.5%;
-	font:				"Rubik 10";
-}
-
-entry {
-    	placeholder:			"Search";
-	background-color:               @button;
-    	placeholder-color:              @fg;
-    	expand:                         true;
-    	padding:                        0.15% 0% 0% 0%;
-}
-
-inputbar {
-	children:			[ prompt, entry ];
-    	background-color:               @button;
-    	expand:                         false;
-    	border-radius:                  6px;
-    	margin:                         0%;
-    	padding:                        10px;
-}
-
-listview {
-    	columns:                        1;
-    	lines:	                        5;
-    	cycle:                          false;
-    	dynamic:                        true;
-    	layout:                         vertical;
+    height: 500px;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 10px;
 }
 
 mainbox {
-    	children:                       [ inputbar, listview ];
-    	spacing:                       	2%;
-    	padding:                        2% 1% 2% 1%;
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [entry];
+    background-color: @bg-col;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 1;
+    lines: 5;
+    background-color: @bg-col;
 }
 
 element {
-    	orientation:                    horizontal;
-    	padding:                        2% 0% 2% 0%;
+    padding: 8px;
+    margin: 2px 0px;
+    border-radius: 8px;
+    background-color: transparent;
+    text-color: @fg-col;
 }
 
 element-icon {
-    	size:                           48px;
-    	horizontal-align:	 	0.5;
+    size: 25px;
 }
 
-element-text {
-    	expand:                         true;
-    	horizontal-align:               0.5;
-    	vertical-align:                 0.5;
-    	margin:                         0.5% 0.5% -0.5% 0.5%;
+element.normal.normal {
+    background-color: transparent;
+    text-color: @fg-col;
 }
 
-element-text, element-icon {
-	background-color:		inherit;
-	text-color:			inherit;
+element.normal.active {
+    background-color: transparent;
+    text-color: @blue;
 }
 
-element selected {
-    	background-color:               @button;
-    	border-radius:                  6px;
+element.normal.urgent {
+    background-color: transparent;
+    text-color: @fg-col2;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+    text-color: @fg-col;
+}
+
+element.alternate.active {
+    background-color: transparent;
+    text-color: @blue;
+}
+
+element.alternate.urgent {
+    background-color: transparent;
+    text-color: @fg-col2;
+}
+
+element.selected.normal {
+    background-color: @blue;
+    text-color: @bg-col;
+}
+
+element.selected.active {
+    background-color: @blue;
+    text-color: @bg-col;
+}
+
+element.selected.urgent {
+    background-color: @fg-col2;
+    text-color: @bg-col;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @bg-col;
+    text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
 }
