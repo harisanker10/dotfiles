@@ -1,0 +1,94 @@
+# -----------------------------
+# Secrets / Credentials
+# -----------------------------
+# SSH private keys (keep public keys allowed)
+.ssh/*
+!.ssh/*.pub
+!.ssh/config
+!.ssh/known_hosts
+!.ssh/authorized_keys
+
+# GPG private keys, keyrings, tokens
+.gnupg/*
+!.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf
+!.gnupg/scdaemon.conf
+
+# API keys / env files
+.env
+.env.*
+!.env.example
+
+# Credentials / auth files
+**/*token*
+**/*secret*
+**/*credentials*
+**/*apikey*
+**/*api_key*
+
+# -----------------------------
+# Shell history / sensitive runtime files
+# -----------------------------
+.zsh_history
+.bash_history
+.lesshst
+.wget-hsts
+.python_history
+.node_repl_history
+
+# -----------------------------
+# System / desktop junk
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs / temp / cache
+# -----------------------------
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.cache/
+.local/share/Trash/
+.local/state/
+
+# -----------------------------
+# Editors / IDEs
+# -----------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# Neovim
+.local/share/nvim/
+.local/state/nvim/
+.config/nvim/.luarc.json
+
+# -----------------------------
+# Language build artifacts
+# -----------------------------
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Rust
+target/
+
+# Go
+bin/
+
+# -----------------------------
+# Git / repo internal
+# -----------------------------
+.git/
+

@@ -1,0 +1,6 @@
+^\.git$
+^\.git/
+^README\.md$
+^\.gitignore$
+^personal(\.pub)?$
+
